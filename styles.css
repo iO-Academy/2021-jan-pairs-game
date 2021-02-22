@@ -33,3 +33,13 @@ body {
     padding-left: 0;
     line-height: 1.5;
 }
+
+.game-area {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.cards {
+
+}
