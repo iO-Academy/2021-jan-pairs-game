@@ -57,10 +57,6 @@ h2 {
     margin: 0 auto;
 }
 
-.card {
-    border-radius: 5px;
-}
-
 .card-row {
     display: flex;
     flex-flow: row nowrap;
