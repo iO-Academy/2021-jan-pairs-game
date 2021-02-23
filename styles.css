@@ -1,0 +1,78 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #BAD9D8;
+}
+
+img {
+    width: 150px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #C5C2CC;
+    color: #35205E;
+    padding: 10px;
+}
+
+.score-area {
+    width: 100%;
+    padding-top: 20px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+.instructions ul {
+    list-style: none;
+    font-family: Verdana, Calibri;
+    font-size: 1.7rem;
+    padding-left: 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.game-area {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 750px;
+    height: 750px;
+    margin: 0 auto;
+}
+
+.card-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.hamster {
+    z-index: -5;
+    position: absolute;
+}
+
+.sloth {
+    position: absolute;
+}
+
+.hide {
+    display: none;
+}
