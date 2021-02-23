@@ -64,3 +64,11 @@ h2 {
     align-content: space-around;
 }
 
+.hamster {
+    z-index: -5;
+    position: absolute;
+}
+
+.sloth {
+    position: absolute;
+}
