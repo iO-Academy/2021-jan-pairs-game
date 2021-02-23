@@ -1,5 +1,3 @@
-
-
 let cardObjectsArray = [
     {
         backOfCard : 'images/cardBack.jpg',
@@ -67,7 +65,6 @@ let cardObjectsArray = [
     }
 ]
 
-
 function shuffleCards(array) {
     let startingIndex = array.length;
     let temporaryIndex = 0;
@@ -84,24 +81,7 @@ function shuffleCards(array) {
 }
 
 let shuffledArrayOfIndexes = shuffleCards(cardObjectsArray)
-
-console.log(shuffledArrayOfIndexes[0].backOfCard)
-console.log(shuffledArrayOfIndexes[0].frontOfCard)
-
-
 let cardDivArray = document.querySelectorAll('.card')
-// console.log(cardDivArray.innerHTML = '<img src="' + shuffledArrayOfIndexes[0].frontOfCard + '">')
-//
-//
-// ///1 query to select array of all card class
-// /// for each item in that array the inner html
-// ///for
-//
-// for (let i = 0; i < shuffledArrayOfIndexes.length; i++) {
-//     cardDivArray.innerHTML = '<img src="' + shuffledArrayOfIndexes[i].frontOfCard + '">'
-//     console.log('running?')
-// }
-
 i = 0;
 cardDivArray.forEach(card => {
     card.innerHTML = '<img class="hamster" src="' + shuffledArrayOfIndexes[i].frontOfCard + '">'
@@ -109,18 +89,3 @@ cardDivArray.forEach(card => {
     console.log(i)
     return i++;
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
