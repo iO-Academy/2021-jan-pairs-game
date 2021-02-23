@@ -13,6 +13,10 @@ body {
     background-color: #BAD9D8;
 }
 
+img {
+    width: 150px;
+}
+
 .header {
     width: 100%;
     font-size: 1rem;
@@ -47,16 +51,12 @@ body {
 }
 
 .cards {
-
 }
 
-.row1, .row2, .row3, .row4 {
+.card-row {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-content: space-around;
 }
 
-img {
-    width: 150px;
-}
