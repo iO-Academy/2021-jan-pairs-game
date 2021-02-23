@@ -10,6 +10,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Press Start 2P', cursive;
+    background-color: #BAD9D8;
 }
 
 .header {
@@ -24,6 +25,7 @@ body {
 .score-area {
     width: 100%;
     padding-top: 20px;
+    background-color: #FFFFFF;
 }
 
 .instructions ul {
@@ -36,10 +38,25 @@ body {
 
 .game-area {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 750px;
+    height: 750px;
+    margin: 0 auto;
 }
 
 .cards {
 
+}
+
+.row1, .row2, .row3, .row4 {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+img {
+    width: 150px;
 }
