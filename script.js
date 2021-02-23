@@ -1,4 +1,4 @@
-<?php
+
 
 let cardObjectsArray = [
     {
@@ -66,3 +66,19 @@ let cardObjectsArray = [
         frontOfCard : 'images/smokingHamster.jpg'
     }
 ]
+
+
+function shuffleCards(array) {
+    let startingIndex = array.length;
+    let temporaryIndex = 0;
+    let randomIndex = 0;
+
+    while (startingIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * startingIndex);
+        startingIndex -= 1;
+        temporaryIndex = array[startingIndex];
+        array[startingIndex] = array[randomIndex];
+        array[randomIndex] = temporaryIndex;
+    }
+    return array;
+}
