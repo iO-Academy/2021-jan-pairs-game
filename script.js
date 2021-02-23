@@ -89,3 +89,10 @@ cardDivArray.forEach(card => {
     console.log(i)
     return i++;
 })
+
+let slothClickArray = document.querySelectorAll('.sloth');
+slothClickArray.forEach(sloth => {
+    sloth.addEventListener('click', (e)=>{
+        sloth.classList.add('hide')
+    })
+})
