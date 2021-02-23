@@ -1,4 +1,3 @@
-<?php
 
 let cardObjectsArray = [
     {
