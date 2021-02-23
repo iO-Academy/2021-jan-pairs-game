@@ -1,4 +1,3 @@
-
 let cardObjectsArray = [
     {
         backOfCard : 'images/cardBack.jpg',
