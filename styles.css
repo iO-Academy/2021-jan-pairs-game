@@ -80,3 +80,41 @@ h2 {
 .hide {
     display: none;
 }
+
+span {
+    display: none;
+}
+.score-screen {
+    background-color: #DD7DE8;
+    color: #35205E;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
+    text-align: center;
+    width: 50%;
+    position: fixed;
+    top: 70px;
+    left: 25%;
+    margin: auto;
+    padding: 25px 50px;
+    font-size: 2rem;
+    display: block;
+}
+@media screen and (max-width: 853px) {
+    .score-screen {
+        display: block;
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 687px) {
+    .score-screen {
+        display: block;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 518px) {
+    .score-screen {
+        display: block;
+        font-size: 0.75rem;
+    }
+}
