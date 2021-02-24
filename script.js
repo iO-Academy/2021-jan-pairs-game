@@ -95,23 +95,26 @@ for(let i = 0; i < cardDivArray.length; i++) {
 
 
 function clickFunction () {
-    let firstClick="null"
-    let secondClick="nullOther"
+    let firstClick = 0
+    let secondClick = 1
     let tally = 0
     let turnCounter = 0
     let slothClickArray = document.querySelectorAll('.sloth');
     slothClickArray.forEach(sloth => {
-    sloth.addEventListener('click', (e)=>{
+    sloth.addEventListener('click', (e)=> {
         sloth.classList.add('hide')
         if(tally % 2 === 0)
-        {let firstClick=sloth.dataset.pair
+        {firstClick=sloth.dataset.pair
         console.log("first click: " + firstClick)
         tally++ }
         else {
             turnCounter++
             tally++
-            let secondClick=sloth.dataset.pair
+            secondClick=sloth.dataset.pair
             console.log("second click: " + secondClick)
+            if(firstClick !== secondClick) {
+                console.log(firstClick, secondClick)
+            }
         }
 
     })
