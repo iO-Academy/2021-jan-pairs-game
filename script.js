@@ -1,51 +1,67 @@
 let cardObjectsArray = [
     {
-        frontOfCard : 'images/pinkHamster.jpg'
+        frontOfCard : 'images/pinkHamster.jpg',
+        pairID: 'pairOne'
     },
     {
-        frontOfCard : 'images/pinkHamster.jpg'
+        frontOfCard : 'images/pinkHamster.jpg',
+        pairID: 'pairOne'
     },
     {
-        frontOfCard : 'images/wheelHamster.jpg'
+        frontOfCard : 'images/wheelHamster.jpg',
+        pairID: 'pairTwo'
     },
     {
-        frontOfCard : 'images/wheelHamster.jpg'
+        frontOfCard : 'images/wheelHamster.jpg',
+        pairID: 'pairTwo'
     },
     {
-        frontOfCard : 'images/yellowHamster.jpg'
+        frontOfCard : 'images/yellowHamster.jpg',
+        pairID: 'pairThree'
     },
     {
-        frontOfCard : 'images/yellowHamster.jpg'
+        frontOfCard : 'images/yellowHamster.jpg',
+        pairID: 'pairThree'
     },
     {
-        frontOfCard : 'images/coralHamster.jpg'
+        frontOfCard : 'images/coralHamster.jpg',
+        pairID: 'pairFour'
     },
     {
-        frontOfCard : 'images/coralHamster.jpg'
+        frontOfCard : 'images/coralHamster.jpg',
+        pairID: 'pairFour'
     },
     {
-        frontOfCard : 'images/greenHamster.jpg'
+        frontOfCard : 'images/greenHamster.jpg',
+        pairID: 'pairFive'
     },
     {
-        frontOfCard : 'images/greenHamster.jpg'
+        frontOfCard : 'images/greenHamster.jpg',
+        pairID: 'pairFive'
     },
     {
-        frontOfCard : 'images/tealHamster.jpg'
+        frontOfCard : 'images/tealHamster.jpg',
+        pairID: 'pairSix'
     },
     {
-        frontOfCard : 'images/tealHamster.jpg'
+        frontOfCard : 'images/tealHamster.jpg',
+        pairID: 'pairSix'
     },
     {
-        frontOfCard : 'images/handHamster.jpg'
+        frontOfCard : 'images/handHamster.jpg',
+        pairID: 'pairSeven'
     },
     {
-        frontOfCard : 'images/handHamster.jpg'
+        frontOfCard : 'images/handHamster.jpg',
+        pairID: 'pairSeven'
     },
     {
-        frontOfCard : 'images/smokingHamster.jpg'
+        frontOfCard : 'images/smokingHamster.jpg',
+        pairID: 'pairEight'
     },
     {
-        frontOfCard : 'images/smokingHamster.jpg'
+        frontOfCard : 'images/smokingHamster.jpg',
+        pairID: 'pairEight'
     }
 ];
 
@@ -71,12 +87,31 @@ let cardDivArray = document.querySelectorAll('.card');
 
 for(let i = 0; i < cardDivArray.length; i++) {
     cardDivArray[i].innerHTML = '<img class="hamster" src="' + shuffledCardsArray[i].frontOfCard + '">'
-        + '<img class="sloth" src="images/cardBack.jpg">';
+        + '<img class="sloth" data-pair ="'+ shuffledCardsArray[i].pairID + '" src= "images/cardBack.jpg">';
+
 }
+
 
 let slothClickArray = document.querySelectorAll('.sloth');
 slothClickArray.forEach(sloth => {
     sloth.addEventListener('click', (e)=>{
         sloth.classList.add('hide');
+        console.log(sloth.dataset.pair);
+        console.log(sloth);
+    })
+})
+
+
+let tally = 0
+let turnCounter = 0
+let slothClickArray = document.querySelectorAll('.sloth');
+slothClickArray.forEach(sloth => {
+    sloth.addEventListener('click', (e)=>{
+        sloth.classList.add('hide')
+        tally++
+        if(tally % 2 === 0) {
+            turnCounter++
+
+        }
     })
 })
