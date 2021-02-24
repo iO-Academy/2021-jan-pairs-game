@@ -74,9 +74,17 @@ for(let i = 0; i < cardDivArray.length; i++) {
         + '<img class="sloth" src="images/cardBack.jpg">';
 }
 
+let tally = 0
+let turnCounter = 0
+
 let slothClickArray = document.querySelectorAll('.sloth');
 slothClickArray.forEach(sloth => {
     sloth.addEventListener('click', (e)=>{
         sloth.classList.add('hide');
+        tally++
+        if(tally % 2 === 0) {
+            turnCounter++
+        }
     })
 })
+
