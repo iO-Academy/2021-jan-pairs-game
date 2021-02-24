@@ -114,7 +114,7 @@ function clickFunction() {
                     // flip over after time
                     console.log(firstClick, secondClick)
                 } else {
-                    console.log ("match")
+                    alert("match")
                     }
                 }
             })
