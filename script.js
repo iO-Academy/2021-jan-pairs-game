@@ -91,7 +91,6 @@ for (let i = 0; i < cardDivArray.length; i++) {
 
 }
 
-
 function clickFunction() {
     let firstClick = 0
     let secondClick = 1
@@ -123,3 +122,16 @@ function clickFunction() {
 }
 
 clickFunction()
+let tally = 0
+let turnCounter = 0
+
+let slothClickArray = document.querySelectorAll('.sloth');
+slothClickArray.forEach(sloth => {
+    sloth.addEventListener('click', (e)=>{
+        sloth.classList.add('hide');
+        tally++
+        if(tally % 2 === 0) {
+            turnCounter++
+        }
+    })
+})
