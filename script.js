@@ -76,6 +76,7 @@ for(let i = 0; i < cardDivArray.length; i++) {
 
 let tally = 0
 let turnCounter = 0
+displayTurnCounter(turnCounter)
 
 let slothClickArray = document.querySelectorAll('.sloth');
 slothClickArray.forEach(sloth => {
@@ -84,7 +85,11 @@ slothClickArray.forEach(sloth => {
         tally++
         if(tally % 2 === 0) {
             turnCounter++
+            displayTurnCounter(turnCounter)
         }
     })
 })
 
+function displayTurnCounter (currentTurn) {
+    document.querySelector('.turns').innerHTML = '<p>Turns: ' + currentTurn + '</p>'
+}
