@@ -80,3 +80,10 @@ slothClickArray.forEach(sloth => {
         sloth.classList.add('hide');
     })
 })
+//matchedPairs is dependent on story-4
+let matchedPairs = 0;
+if (matchedPairs = 8) {
+    // if matchedPairs = 8, display a modal with turns taken
+}
+// make the score-screen appear when the game is completed
+document.querySelector("span").classList.add("score-screen")
