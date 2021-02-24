@@ -92,26 +92,32 @@ for(let i = 0; i < cardDivArray.length; i++) {
 }
 
 
-let slothClickArray = document.querySelectorAll('.sloth');
-slothClickArray.forEach(sloth => {
-    sloth.addEventListener('click', (e)=>{
-        sloth.classList.add('hide');
-        console.log(sloth.dataset.pair);
-        console.log(sloth);
-    })
-})
 
 
-let tally = 0
-let turnCounter = 0
-let slothClickArray = document.querySelectorAll('.sloth');
-slothClickArray.forEach(sloth => {
+function clickFunction () {
+    let firstClick="null"
+    let secondClick="nullOther"
+    let tally = 0
+    let turnCounter = 0
+    let slothClickArray = document.querySelectorAll('.sloth');
+    slothClickArray.forEach(sloth => {
     sloth.addEventListener('click', (e)=>{
         sloth.classList.add('hide')
+        let firstClick=sloth.dataset.pair
+        console.log("first click: " + firstClick)
         tally++
         if(tally % 2 === 0) {
             turnCounter++
+            let secondClick=sloth.dataset.pair
+            console.log("second click: " + secondClick)
 
         }
+
     })
-})
+
+
+    }
+
+)}
+
+clickFunction ()
