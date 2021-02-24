@@ -14,7 +14,7 @@ body {
 }
 
 img {
-    width: 150px;
+    width: 100%;
 }
 
 h2 {
@@ -64,13 +64,17 @@ h2 {
     align-content: space-around;
 }
 
+.card {
+    position: relative;
+    height: 150px;
+    width: 150px;
+}
+
 .hamster {
     z-index: -5;
     position: absolute;
-}
-
-.sloth {
-    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .hide {
