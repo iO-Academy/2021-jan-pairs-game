@@ -1,66 +1,50 @@
 let cardObjectsArray = [
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/pinkHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/pinkHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/wheelHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/wheelHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/yellowHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/yellowHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/coralHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/coralHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/greenHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/greenHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/tealHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/tealHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/handHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/handHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/smokingHamster.jpg'
     },
     {
-        backOfCard : 'images/cardBack.jpg',
         frontOfCard : 'images/smokingHamster.jpg'
     }
 ]
@@ -71,23 +55,23 @@ function shuffleCards(array) {
     let randomIndex = 0;
 
     while (startingIndex !== 0) {
+        //This random index is created by multiplying the
         randomIndex = Math.floor(Math.random() * startingIndex);
-        startingIndex -= 1;
         temporaryIndex = array[startingIndex];
         array[startingIndex] = array[randomIndex];
         array[randomIndex] = temporaryIndex;
+        startingIndex--;
     }
     return array;
 }
 
-let shuffledArrayOfIndexes = shuffleCards(cardObjectsArray)
+let shuffledCardsArray = shuffleCards(cardObjectsArray)
 let cardDivArray = document.querySelectorAll('.card')
 i = 0;
 cardDivArray.forEach(card => {
-    card.innerHTML = '<img class="hamster" src="' + shuffledArrayOfIndexes[i].frontOfCard + '">'
-        + '<img class="sloth" src="' + shuffledArrayOfIndexes[i].backOfCard + '">';
+    card.innerHTML = '<img class="hamster" src="' + shuffledCardsArray[i].frontOfCard + '">'
     console.log(i)
-    return i++;
+    i++;
 })
 
 let slothClickArray = document.querySelectorAll('.sloth');
