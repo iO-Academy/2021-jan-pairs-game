@@ -18,7 +18,7 @@ img {
 }
 
 h2 {
-    text-align: center;
+    text-align: start;
 }
 
 .header {
@@ -35,6 +35,7 @@ h2 {
     padding-top: 20px;
     background-color: #FFFFFF;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -79,4 +80,29 @@ h2 {
 
 .hide {
     display: none;
+}
+
+.timer {
+    background-color: #35205E;
+    width:150px;
+    height: 50px;
+    margin: 10px;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.turns {
+    background-color: #35205E;
+    width:150px;
+    height: 50px;
+    margin: 10px;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.scores-container {
+    margin-left: 50px;
+    margin-top: 20px;
 }
