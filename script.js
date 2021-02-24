@@ -103,14 +103,15 @@ function clickFunction () {
     slothClickArray.forEach(sloth => {
     sloth.addEventListener('click', (e)=>{
         sloth.classList.add('hide')
-        let firstClick=sloth.dataset.pair
+        if(tally % 2 === 0)
+        {let firstClick=sloth.dataset.pair
         console.log("first click: " + firstClick)
-        tally++
-        if(tally % 2 === 0) {
+        tally++ }
+        else {
             turnCounter++
+            tally++
             let secondClick=sloth.dataset.pair
             console.log("second click: " + secondClick)
-
         }
 
     })
