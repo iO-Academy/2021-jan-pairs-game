@@ -16,12 +16,9 @@ function shuffleCards(array) {
     return array;
 }
 
-function addClickListener(onClick) {
-    slothClickArray.forEach(sloth => {
-        sloth.addEventListener('click', onClick )
-    })
-}
 function onClick() {
+    let slothClickArray = document.querySelectorAll('.sloth');
+    console.log("on click firing")
     this.classList.add('hide');
     this.classList.add('selected');
     if (clickCounter  === 0) {
@@ -35,7 +32,16 @@ function onClick() {
     }
 }
 
+function addClickListener(onClick) {
+    let slothClickArray = document.querySelectorAll('.sloth');
+    console.log(slothClickArray)
+    slothClickArray.forEach(sloth => {
+        sloth.addEventListener('click', onClick )
+    })
+}
+
 function flipCardsBack() {
+    console.log("flip card back initiated")
     let selectedCards = document.querySelectorAll('.selected');
     selectedCards.forEach(card => {
         card.classList.remove('hide')
@@ -44,7 +50,10 @@ function flipCardsBack() {
     })
 }
 
-function evaluateCards(onClick, slothClickArray) {
+function evaluateCards(onClick) {
+    console.log("evaluating cards")
+    let slothClickArray = document.querySelectorAll('.sloth');
+    console.log(slothClickArray)
     if (firstClickPair !== secondClickPair) {
         slothClickArray.forEach(sloth => {
             sloth.removeEventListener('click', onClick)
@@ -57,5 +66,3 @@ function evaluateCards(onClick, slothClickArray) {
         matchedPairs++
     }
 }
-
-export{shuffleCards, addClickListener, onClick, flipCardsBack, evaluateCards}
