@@ -21,14 +21,14 @@ function onClick() {
     console.log("on click firing")
     this.classList.add('hide');
     this.classList.add('selected');
-    if (clickCounter  === 0) {
+    if (clickCounter === 0) {
         firstClickPair = this.dataset.pair
         clickCounter++
     } else {
         clickCounter--
-        turnCounter ++
+        turnCounter++
         secondClickPair = this.dataset.pair
-        evaluateCards(onClick,slothClickArray)
+        evaluateCards(onClick, slothClickArray)
     }
 }
 
@@ -36,7 +36,7 @@ function addClickListener(onClick) {
     let slothClickArray = document.querySelectorAll('.sloth');
     console.log(slothClickArray)
     slothClickArray.forEach(sloth => {
-        sloth.addEventListener('click', onClick )
+        sloth.addEventListener('click', onClick)
     })
 }
 
