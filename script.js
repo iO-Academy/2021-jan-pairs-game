@@ -1,67 +1,67 @@
 let cardObjectsArray = [
     {
         frontOfCard: 'images/pinkHamster.jpg',
-        pairID: 'pairOne'
+        pairId: 1
     },
     {
         frontOfCard: 'images/pinkHamster.jpg',
-        pairID: 'pairOne'
+        pairId: 1
     },
     {
         frontOfCard: 'images/wheelHamster.jpg',
-        pairID: 'pairTwo'
+        pairId: 2
     },
     {
         frontOfCard: 'images/wheelHamster.jpg',
-        pairID: 'pairTwo'
+        pairId: 2
     },
     {
         frontOfCard: 'images/yellowHamster.jpg',
-        pairID: 'pairThree'
+        pairId: 3
     },
     {
         frontOfCard: 'images/yellowHamster.jpg',
-        pairID: 'pairThree'
+        pairId: 3
     },
     {
         frontOfCard: 'images/coralHamster.jpg',
-        pairID: 'pairFour'
+        pairId: 4
     },
     {
         frontOfCard: 'images/coralHamster.jpg',
-        pairID: 'pairFour'
+        pairId: 4
     },
     {
         frontOfCard: 'images/greenHamster.jpg',
-        pairID: 'pairFive'
+        pairId: 5
     },
     {
         frontOfCard: 'images/greenHamster.jpg',
-        pairID: 'pairFive'
+        pairId: 5
     },
     {
         frontOfCard: 'images/tealHamster.jpg',
-        pairID: 'pairSix'
+        pairId: 6
     },
     {
         frontOfCard: 'images/tealHamster.jpg',
-        pairID: 'pairSix'
+        pairId: 6
     },
     {
         frontOfCard: 'images/handHamster.jpg',
-        pairID: 'pairSeven'
+        pairId: 7
     },
     {
         frontOfCard: 'images/handHamster.jpg',
-        pairID: 'pairSeven'
+        pairId: 7
     },
     {
         frontOfCard: 'images/smokingHamster.jpg',
-        pairID: 'pairEight'
+        pairId: 8
     },
     {
         frontOfCard: 'images/smokingHamster.jpg',
-        pairID: 'pairEight'
+        pairId: 8
     }
 ];
 
@@ -112,7 +112,7 @@ function onClick() {
         clickCounter++
     } else {
         clickCounter--
-        turnCounter ++
+        turnCounter++
         secondClickPair = this.dataset.pair
         evaluateCards(onClick,slothClickArray)
     }
