@@ -101,7 +101,6 @@ function addClickListener(onClick) {
     slothClickArray.forEach(sloth => {
             sloth.addEventListener('click', onClick )
         })
-
 }
 
 function onClick() {
@@ -113,7 +112,6 @@ function onClick() {
     } else {
         clickCounter--
         turnCounter ++
-        console.log(turnCounter)
         secondClickPair = this.dataset.pair
         evaluateCards(onClick,slothClickArray)
     }
@@ -138,7 +136,6 @@ function onClick() {
             alert("match")
         //To do remove selected tag from this sloth
             //to do: increment score
-
         }
     }
 
