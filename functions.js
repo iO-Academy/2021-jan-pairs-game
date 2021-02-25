@@ -28,7 +28,7 @@ function onClick() {
         clickCounter--
         turnCounter++
         secondClickPair = this.dataset.pair
-        evaluateCards(onClick, slothClickArray)
+        evaluateCards()
     }
 }
 
@@ -50,7 +50,7 @@ function flipCardsBack() {
     })
 }
 
-function evaluateCards(onClick) {
+function evaluateCards() {
     console.log("evaluating cards")
     let slothClickArray = document.querySelectorAll('.sloth');
     console.log(slothClickArray)
