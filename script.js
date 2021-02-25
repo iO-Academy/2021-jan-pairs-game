@@ -91,44 +91,55 @@ for (let i = 0; i < cardDivArray.length; i++) {
 
 }
 
-function flipCardsBack() {
-    let selectedCards = document.querySelectorAll('.selected');
-    selectedCards.forEach(card => {
-        card.classList.remove('hide')
-        card.classList.remove('selected')
-    })
-}
-
-let firstClickPair = 0
-let secondClickPair = 0
 let clickCounter = 0
 let turnCounter = 0
+let firstClickPair = "start"
+let secondClickPair = "start"
+let slothClickArray = document.querySelectorAll('.sloth');
 
-function clickFunction(flipCardsBack) {
-
-    let slothClickArray = document.querySelectorAll('.sloth');
+function addClickListener(onClick) {
     slothClickArray.forEach(sloth => {
-        sloth.addEventListener('click', function addCLickEvent() {
-            sloth.classList.add('hide');
-            sloth.classList.add('selected');
-            if (clickCounter % 2 === 0) {
-                firstClickPair = sloth.dataset.pair
-                clickCounter++
-            } else {
-                turnCounter++
-                clickCounter++
-                secondClickPair = sloth.dataset.pair
-                if (firstClickPair !== secondClickPair) {
-                    console.log(firstClickPair + ' ' + secondClickPair)
-                    setTimeout(flipCardsBack, 2000);
-                } else {
-                    alert("match")
-                    }
-                }
-            })
-        }
-    )
+            sloth.addEventListener('click', onClick )
+        })
+
 }
 
-clickFunction(flipCardsBack)
+function onClick() {
+    this.classList.add('hide');
+    this.classList.add('selected');
+    if (clickCounter  === 0) {
+        firstClickPair = this.dataset.pair
+        clickCounter++
+    } else {
+        clickCounter--
+        turnCounter ++
+        console.log(turnCounter)
+        secondClickPair = this.dataset.pair
+        evaluateCards(onClick,slothClickArray)
+    }
+}
 
+    function flipCardsBack() {
+        let selectedCards = document.querySelectorAll('.selected');
+        selectedCards.forEach(card => {
+            card.classList.remove('hide')
+            card.classList.remove('selected')
+            addClickListener(onClick)
+        })
+    }
+
+    function evaluateCards(onClick, slothClickArray) {
+        if (firstClickPair !== secondClickPair) {
+            slothClickArray.forEach(sloth => {
+                sloth.removeEventListener('click', onClick)
+            })
+            setTimeout(flipCardsBack, 2000);
+        } else {
+            alert("match")
+        //To do remove selected tag from this sloth
+            //to do: increment score
+
+        }
+    }
+
+addClickListener(onClick)
