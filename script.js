@@ -91,27 +91,36 @@ for (let i = 0; i < cardDivArray.length; i++) {
 
 }
 
-function clickFunction() {
-    let firstClick = 0
-    let secondClick = 1
-    let tally = 0
-    let turnCounter = 0
+function flipCardsBack() {
+    let selectedCards = document.querySelectorAll('.selected');
+    selectedCards.forEach(card => {
+        card.classList.remove('hide')
+        card.classList.remove('selected')
+    })
+}
+
+let firstClickPair = 0
+let secondClickPair = 0
+let clickCounter = 0
+let turnCounter = 0
+
+function clickFunction(flipCardsBack) {
+
     let slothClickArray = document.querySelectorAll('.sloth');
     slothClickArray.forEach(sloth => {
-        sloth.addEventListener('click', (e) => {
-            sloth.classList.add('hide')
-            if (tally % 2 === 0) {
-                firstClick = sloth.dataset.pair
-                console.log("first click: " + firstClick)
-                tally++
+        sloth.addEventListener('click', function addCLickEvent() {
+            sloth.classList.add('hide');
+            sloth.classList.add('selected');
+            if (clickCounter % 2 === 0) {
+                firstClickPair = sloth.dataset.pair
+                clickCounter++
             } else {
                 turnCounter++
-                tally++
-                secondClick = sloth.dataset.pair
-                console.log("second click: " + secondClick)
-                if (firstClick !== secondClick) {
-                    // flip over after time
-                    console.log(firstClick, secondClick)
+                clickCounter++
+                secondClickPair = sloth.dataset.pair
+                if (firstClickPair !== secondClickPair) {
+                    console.log(firstClickPair + ' ' + secondClickPair)
+                    setTimeout(flipCardsBack, 2000);
                 } else {
                     alert("match")
                     }
@@ -121,5 +130,5 @@ function clickFunction() {
     )
 }
 
-clickFunction()
+clickFunction(flipCardsBack)
 
