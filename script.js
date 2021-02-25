@@ -87,8 +87,7 @@ let cardDivArray = document.querySelectorAll('.card');
 
 for (let i = 0; i < cardDivArray.length; i++) {
     cardDivArray[i].innerHTML = '<img class="hamster" src="' + shuffledCardsArray[i].frontOfCard + '">'
-        + '<img class="sloth" data-pair ="' + shuffledCardsArray[i].pairID + '" src= "images/cardBack.jpg">';
-
+        + '<img class="sloth" data-pair ="' + shuffledCardsArray[i].pairId + '" src= "images/cardBack.jpg">';
 }
 
 let clickCounter = 0
