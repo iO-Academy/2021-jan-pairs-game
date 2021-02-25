@@ -96,6 +96,7 @@ let turnCounter = 0
 let firstClickPair = "start"
 let secondClickPair = "start"
 let slothClickArray = document.querySelectorAll('.sloth');
+let matchedPairs = 0
 
 function addClickListener(onClick) {
     slothClickArray.forEach(sloth => {
@@ -133,9 +134,10 @@ function onClick() {
             })
             setTimeout(flipCardsBack, 2000);
         } else {
-            alert("match")
-        //To do remove selected tag from this sloth
-            //to do: increment score
+            slothClickArray.forEach(sloth => {
+                sloth.classList.remove('selected')
+            })
+            matchedPairs++
         }
     }
 
